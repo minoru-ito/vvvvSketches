@@ -1,0 +1,179 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
+   <PATCH nodename="C:\github\vvvvSketches\refrect.v4p">
+   <BOUNDS height="4560" left="3870" top="9780" type="Window" width="5820">
+   </BOUNDS>
+   <NODE componentmode="InAWindow" id="9" nodename="RENDERER (EX9)">
+   <BOUNDS height="0" left="1830" top="3420" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="5565" left="9885" top="9855" type="Window" width="7245">
+   </BOUNDS>
+   <BOUNDS height="1800" left="1830" top="3420" type="Box" width="2400">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="View" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Windowed Depthbuffer Format" slicecount="1" values="D24X8">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Height" visible="1">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Width" visible="1">
+   </PIN>
+   <PIN pinname="Projection" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Fullscreen Depthbuffer Format" slicecount="1" values="NONE">
+   </PIN>
+   <PIN pinname="Fullscreen Dimensions" slicecount="1" values="|1024 x 768|">
+   </PIN>
+   <PIN pinname="Fullscreen Antialiasing Quality Level" slicecount="1" values="NONE">
+   </PIN>
+   <PIN pinname="Windowed Antialiasing Quality Level" slicecount="1" values="NONE">
+   </PIN>
+   <PIN pinname="Auto Aspect Ratio" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE id="8" nodename="Quad (DX9)">
+   <BOUNDS height="0" left="615" top="2475" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Texture" visible="1">
+   </PIN>
+   <PIN pinname="Color" slicecount="7" visible="1" values="|0.00000,0.00000,0.00000,1.00000|,|0.16667,0.16667,0.16667,1.00000|,|0.33333,0.33333,0.33333,1.00000|,|0.50000,0.50000,0.50000,1.00000|,|0.66667,0.66667,0.66667,1.00000|,|0.83333,0.83333,0.83333,1.00000|,|1.00000,1.00000,1.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Transform" slicecount="1" visible="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE id="7" nodename="Group (EX9)">
+   <BOUNDS height="0" left="1815" top="3030" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Layer 1" visible="1">
+   </PIN>
+   <PIN pinname="Layer 2" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="9" dstpinname="Layers" srcnodeid="7" srcpinname="Layer">
+   </LINK>
+   <LINK dstnodeid="7" dstpinname="Layer 1" srcnodeid="8" srcpinname="Layer">
+   </LINK>
+   <NODE id="6" nodename="FILETEXTURE (EX9.TEXTURE)">
+   <BOUNDS height="0" left="930" top="1530" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Filename" slicecount="1" values="images\earth_512x512.jpg">
+   </PIN>
+   <PIN pinname="Mip Map Count" slicecount="1" values="All">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="5" nodename=":EFFECTS:\GouraudPoint.fx">
+   <BOUNDS height="0" left="2085" top="2490" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="12000" left="11010" top="10305" type="Window" width="12000">
+   </BOUNDS>
+   <BOUNDS height="6000" left="2085" top="2490" type="Box" width="6000">
+   </BOUNDS>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   <PIN pinname="Light Position XYZ" slicecount="3" values="0,0,-0.1">
+   </PIN>
+   <PIN pinname="Light Attenuation 1" slicecount="1" values="0.37">
+   </PIN>
+   <PIN pinname="Light Attenuation 0" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Light Attenuation 2" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Ambient Color" slicecount="1" values="|0.15362,0.15362,0.15362,1.00000|">
+   </PIN>
+   <PIN pinname="Specular Color" slicecount="1" values="|0.34167,0.34167,0.34167,1.00000|">
+   </PIN>
+   <PIN pinname="Light Range" slicecount="1" values="0.75">
+   </PIN>
+   <PIN pinname="Power" slicecount="1" values="25">
+   </PIN>
+   <PIN pinname="Diffuse Color" slicecount="1" values="|0.09429,0.09429,0.09429,1.00000|">
+   </PIN>
+   <PIN pinname="Render State" visible="1">
+   </PIN>
+   <PIN pinname="Texture" visible="1">
+   </PIN>
+   </NODE>
+   <NODE id="4" nodename="Grid (EX9.Geometry)">
+   <BOUNDS height="0" left="2220" top="1965" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="5" dstpinname="Mesh" srcnodeid="4" srcpinname="Mesh">
+   </LINK>
+   <LINK dstnodeid="7" dstpinname="Layer 2" srcnodeid="5" srcpinname="Layer">
+   </LINK>
+   <NODE id="3" nodename="Blend (EX9.RenderState)">
+   <BOUNDS height="0" left="2100" top="1515" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Render State Out" visible="1">
+   </PIN>
+   <PIN pinname="Draw Mode" slicecount="1" values="ColorAsAlphaAdd">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="5" dstpinname="Texture" srcnodeid="6" srcpinname="Texture Out">
+   </LINK>
+   <LINK dstnodeid="8" dstpinname="Texture" srcnodeid="6" srcpinname="Texture Out">
+   </LINK>
+   <NODE id="2" nodename="Transform (Transform 3d)">
+   <BOUNDS height="0" left="2400" top="1110" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="TranslateY" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Roll" slicecount="1" values="-0.5">
+   </PIN>
+   <PIN pinname="Yaw" slicecount="1" values="-0.5">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="5" dstpinname="Transform" srcnodeid="2" srcpinname="Transform Out">
+   </LINK>
+   <LINK dstnodeid="5" dstpinname="Render State" srcnodeid="3" srcpinname="Render State Out">
+   </LINK>
+   <NODE componentmode="InABox" id="1" nodename="IOBox (String)">
+   <BOUNDS height="690" left="3675" top="255" type="Node" width="1065">
+   </BOUNDS>
+   <BOUNDS height="690" left="3675" top="255" type="Box" width="1065">
+   </BOUNDS>
+   <BOUNDS height="160" left="5955" top="1125" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="0" values="|Minoru Ito&cr;&lf;GK TECH Inc.|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="0" nodename="IOBox (String)">
+   <BOUNDS height="270" left="435" top="225" type="Node" width="1620">
+   </BOUNDS>
+   <BOUNDS height="435" left="435" top="225" type="Box" width="2880">
+   </BOUNDS>
+   <BOUNDS height="160" left="5955" top="1125" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="0" values="|refrect image|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="12">
+   </PIN>
+   </NODE>
+   <PACK Name="dx11" Version="1.3.1">
+   </PACK>
+   <PACK Name="addonpack" Version="36.0.0">
+   </PACK>
+   </PATCH>

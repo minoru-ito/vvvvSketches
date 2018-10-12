@@ -1,0 +1,253 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv40beta18.dtd" >
+   <PATCH nodename="C:\vvvv\tech\ito\zoomLevel_002.v4p">
+   <BOUNDS height="5430" left="3705" top="5175" type="Window" width="6435">
+   </BOUNDS>
+   <NODE componentmode="InAWindow" id="16" nodename="Renderer (EX9)">
+   <BOUNDS height="0" left="3180" top="3765" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="11805" left="11490" top="5715" type="Window" width="11490">
+   </BOUNDS>
+   <BOUNDS height="1800" left="3180" top="3765" type="Box" width="2400">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="View Transform" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Windowed Depthbuffer Format" slicecount="1" values="NONE">
+   </PIN>
+   <PIN pinname="Windowed Antialiasing Quality Level" slicecount="1" values="NONE">
+   </PIN>
+   <PIN pinname="Clear Depth Buffer" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Clip Device" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Presentation Interval" slicecount="1" values="default">
+   </PIN>
+   </NODE>
+   <NODE id="15" nodename="Quad (DX9)">
+   <BOUNDS height="0" left="3180" top="3255" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   <PIN pinname="Texture" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="16" dstpinname="Layers" srcnodeid="15" srcpinname="Layer">
+   </LINK>
+   <NODE id="14" nodename="FileTexture (EX9.Texture)">
+   <BOUNDS height="0" left="3510" top="2730" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Filename" visible="1">
+   </PIN>
+   <PIN pinname="Format" slicecount="1" values="|No Specific|">
+   </PIN>
+   <PIN pinname="Mip Map Count" slicecount="1" values="|From File|">
+   </PIN>
+   <PIN pinname="Repair" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE id="13" nodename="Dir (File)">
+   <BOUNDS height="0" left="3510" top="600" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Filenames" visible="1">
+   </PIN>
+   <PIN pinname="Directory" slicecount="1" values="images\mipmap">
+   </PIN>
+   <PIN pinname="Mask" slicecount="1" values="*.jpg">
+   </PIN>
+   <PIN pinname="FileCount" visible="1">
+   </PIN>
+   <PIN pinname="doRescan" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE id="12" nodename="GetSlice (String)">
+   <BOUNDS height="0" left="3525" top="2325" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Index" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="12" dstpinname="Input" srcnodeid="13" srcpinname="Filenames">
+   </LINK>
+   <LINK dstnodeid="14" dstpinname="Filename" srcnodeid="12" srcpinname="Output">
+   </LINK>
+   <NODE id="11" nodename="Scale (Transform Vector)">
+   <BOUNDS height="0" left="2265" top="2730" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="XYZ" visible="1">
+   </PIN>
+   <PIN pinname="Transform In" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="15" dstpinname="Transform" srcnodeid="11" srcpinname="Transform Out">
+   </LINK>
+   <NODE id="10" nodename="GT (Value)">
+   <BOUNDS height="0" left="4215" top="1500" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" slicecount="1" values="0.2">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE id="9" nodename="GT (Value)">
+   <BOUNDS height="0" left="4590" top="1500" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" slicecount="1" values="0.1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE id="8" nodename="Add (Value)">
+   <BOUNDS height="270" left="4215" top="1905" type="Node" width="420">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Input Count" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Input 3" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE id="7" nodename="Damper (Animation)">
+   <BOUNDS height="0" left="4590" top="1005" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Go To Position" visible="1">
+   </PIN>
+   <PIN pinname="FilterTime" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Position Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="10" dstpinname="Input 1" srcnodeid="7" srcpinname="Position Out">
+   </LINK>
+   <LINK dstnodeid="9" dstpinname="Input 1" srcnodeid="7" srcpinname="Position Out">
+   </LINK>
+   <LINK dstnodeid="8" dstpinname="Input 1" srcnodeid="10" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="8" dstpinname="Input 2" srcnodeid="9" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="12" dstpinname="Index" srcnodeid="8" srcpinname="Output">
+   </LINK>
+   <NODE id="-2" nodename="Mouse (System Global)">
+   <BOUNDS height="0" left="2115" top="225" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   </NODE>
+   <NODE id="6" nodename="Map (Value)">
+   <BOUNDS height="0" left="2295" top="780" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Source Minimum" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Destination Maximum" slicecount="1" values="0.3">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Destination Minimum" slicecount="1" values="0.01">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="6" dstpinname="Input" srcnodeid="-2" srcpinname="Y">
+   </LINK>
+   <NODE componentmode="Hidden" id="5" nodename="Renderer (TTY)">
+   <BOUNDS height="0" left="1695" top="3765" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="5055" left="10530" top="11400" type="Window" width="6240">
+   </BOUNDS>
+   <BOUNDS height="1800" left="1695" top="3765" type="Box" width="2400">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="TTY">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="15" dstpinname="Texture" srcnodeid="14" srcpinname="Texture Out">
+   </LINK>
+   <NODE id="4" nodename="Translate (Transform)">
+   <BOUNDS height="0" left="1425" top="2250" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="11" dstpinname="Transform In" srcnodeid="4" srcpinname="Transform Out">
+   </LINK>
+   <NODE id="3" nodename="LinearSpread (Spreads)">
+   <BOUNDS height="0" left="300" top="1410" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Spread Count" slicecount="1" values="6">
+   </PIN>
+   <PIN pinname="Width" slicecount="1" values="2">
+   </PIN>
+   </NODE>
+   <NODE id="2" nodename="LinearSpread (Spreads)">
+   <BOUNDS height="0" left="1515" top="1395" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Spread Count" slicecount="1" values="6">
+   </PIN>
+   <PIN pinname="Width" slicecount="1" values="2">
+   </PIN>
+   </NODE>
+   <NODE id="1" nodename="Cross (2d)">
+   <BOUNDS height="0" left="1035" top="1815" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Y In" visible="1">
+   </PIN>
+   <PIN pinname="X In" visible="1">
+   </PIN>
+   <PIN pinname="X Out" visible="1">
+   </PIN>
+   <PIN pinname="Y Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="1" dstpinname="Y In" srcnodeid="2" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="1" dstpinname="X In" srcnodeid="3" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="4" dstpinname="X" srcnodeid="1" srcpinname="X Out">
+   </LINK>
+   <LINK dstnodeid="4" dstpinname="Y" srcnodeid="1" srcpinname="Y Out">
+   </LINK>
+   <LINK dstnodeid="11" dstpinname="XYZ" srcnodeid="6" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="7" dstpinname="Go To Position" srcnodeid="6" srcpinname="Output">
+   </LINK>
+   <NODE componentmode="InABox" id="0" nodename="IOBox (String)">
+   <BOUNDS height="270" left="465" top="4215" type="Node" width="1980">
+   </BOUNDS>
+   <BOUNDS height="495" left="465" top="4215" type="Box" width="4545">
+   </BOUNDS>
+   <BOUNDS height="160" left="0" top="0" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="0" values="|mouse up and down again|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="16">
+   </PIN>
+   </NODE>
+   </PATCH>

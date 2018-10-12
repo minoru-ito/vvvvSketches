@@ -1,0 +1,291 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
+   <PATCH nodename="C:\github\vvvvSketches\[pixelShader]PostEffect_001.v4p" bgcolor="15132390">
+   <BOUNDS height="5055" left="1440" top="525" type="Window" width="7020">
+   </BOUNDS>
+   <NODE componentmode="InABox" id="36" nodename="IOBox (String)">
+   <BOUNDS height="270" left="270" top="210" type="Node" width="435">
+   </BOUNDS>
+   <BOUNDS height="525" left="270" top="210" type="Box" width="2580">
+   </BOUNDS>
+   <BOUNDS height="160" left="0" top="0" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="0" values="|PostEffect Copy|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="16">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="35" nodename="IOBox (String)">
+   <BOUNDS height="270" left="270" top="735" type="Node" width="1530">
+   </BOUNDS>
+   <BOUNDS height="285" left="270" top="735" type="Box" width="1530">
+   </BOUNDS>
+   <BOUNDS height="160" left="0" top="0" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="0" values="|try anthing at here|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE nodename="RENDERER (EX9)" componentmode="Hidden" id="37">
+   <BOUNDS type="Node" left="2655" top="2505" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2655" top="2505" width="2400" height="1800">
+   </BOUNDS>
+   <BOUNDS type="Window" left="10575" top="600" width="4740" height="5055">
+   </BOUNDS>
+   <PIN pinname="Windowed Depthbuffer Format" slicecount="1" values="D24X8">
+   </PIN>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="Projection" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="View" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Width" visible="1">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Height" visible="1">
+   </PIN>
+   <PIN pinname="EX9 Out" visible="1">
+   </PIN>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   <PIN pinname="Backbuffer Width" slicecount="1" values="300">
+   </PIN>
+   <PIN pinname="Backbuffer Height" slicecount="1" values="300">
+   </PIN>
+   <PIN pinname="Fullscreen Depthbuffer Format" slicecount="1" values="NONE">
+   </PIN>
+   <PIN pinname="Fullscreen Dimensions" slicecount="1" values="|1024 x 768|">
+   </PIN>
+   <PIN pinname="Fullscreen Antialiasing Quality Level" slicecount="1" values="NONE">
+   </PIN>
+   <PIN pinname="Windowed Antialiasing Quality Level" slicecount="1" values="NONE">
+   </PIN>
+   <PIN pinname="Auto Aspect Ratio" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE nodename="FILETEXTURE (EX9.TEXTURE)" componentmode="Hidden" id="38">
+   <BOUNDS type="Node" left="3165" top="1380" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Filename" slicecount="1" values="images\ball.jpg">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Mip Map Count" slicecount="1" values="All">
+   </PIN>
+   </NODE>
+   <NODE nodename="effects\Copy.fx" componentmode="Hidden" id="39">
+   <BOUNDS type="Node" left="2655" top="1875" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2655" top="1875" width="6000" height="6000">
+   </BOUNDS>
+   <BOUNDS type="Window" left="4455" top="4785" width="12000" height="12000">
+   </BOUNDS>
+   <PIN pinname="Texture" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="g offset " visible="1">
+   </PIN>
+   <PIN pinname="Technique" slicecount="1" values="TSimpleShader">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="38" srcpinname="Texture Out" dstnodeid="39" dstpinname="Texture">
+   </LINK>
+   <LINK srcnodeid="39" srcpinname="Layer" dstnodeid="37" dstpinname="Layers">
+   </LINK>
+   <NODE nodename="Grid (EX9.Geometry)" componentmode="Hidden" id="40">
+   <BOUNDS type="Node" left="3510" top="540" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="40" srcpinname="Mesh" dstnodeid="39" dstpinname="Mesh">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="41">
+   <BOUNDS type="Node" left="270" top="1230" width="1065" height="690">
+   </BOUNDS>
+   <BOUNDS type="Box" left="270" top="1230" width="1065" height="690">
+   </BOUNDS>
+   <BOUNDS type="Window" left="0" top="0" width="215" height="160">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|2009/10/09&cr;&lf;Minoru Ito&cr;&lf;GK TECH Inc.|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE nodename="Divide (Value)" componentmode="Hidden" id="51">
+   <BOUNDS type="Node" left="2415" top="3150" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="52" nodename="Divide (Value)">
+   <BOUNDS height="0" left="2745" top="3150" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="Vector (4d Join)" componentmode="Hidden" id="53">
+   <BOUNDS type="Node" left="2415" top="3555" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   <PIN pinname="XYZW" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="51" srcpinname="Output" dstnodeid="53" dstpinname="X">
+   </LINK>
+   <LINK srcnodeid="52" srcpinname="Output" dstnodeid="53" dstpinname="Y">
+   </LINK>
+   <LINK srcnodeid="37" srcpinname="Actual Backbuffer Width" dstnodeid="51" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="37" srcpinname="Actual Backbuffer Height" dstnodeid="52" dstpinname="Input 2">
+   </LINK>
+   <NODE nodename="Switch (Value Input)" componentmode="Hidden" id="55">
+   <BOUNDS type="Node" left="1305" top="3450" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Switch" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" slicecount="1" values="0.5">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="55" srcpinname="Output" dstnodeid="51" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="55" srcpinname="Output" dstnodeid="52" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="53" srcpinname="XYZW" dstnodeid="39" dstpinname="g offset ">
+   </LINK>
+   <NODE nodename="IOBOX (VALUE ADVANCED)" componentmode="InABox" id="56">
+   <BOUNDS type="Node" left="645" top="3015" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="645" top="3015" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Window" left="4890" top="6165" width="215" height="160">
+   </BOUNDS>
+   <PIN pinname="Show Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Show Slider" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Minimum" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Maximum" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Slider Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="56" srcpinname="Y Output Value" dstnodeid="55" dstpinname="Switch">
+   </LINK>
+   <NODE nodename="DX9Texture (EX9.Texture)" componentmode="Hidden" id="59">
+   <BOUNDS type="Node" left="3585" top="3135" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Source" visible="1">
+   </PIN>
+   <PIN pinname="Width" visible="1" pintype="Input">
+   </PIN>
+   <PIN pinname="Height" visible="1" pintype="Input">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="37" srcpinname="EX9 Out" dstnodeid="59" dstpinname="Source">
+   </LINK>
+   <LINK srcnodeid="37" srcpinname="Actual Backbuffer Width" dstnodeid="59" dstpinname="Width">
+   </LINK>
+   <LINK srcnodeid="37" srcpinname="Actual Backbuffer Height" dstnodeid="59" dstpinname="Height">
+   </LINK>
+   <NODE componentmode="InAWindow" id="60" nodename="RENDERER (EX9)">
+   <BOUNDS height="0" left="4920" top="2505" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="1800" left="4920" top="2505" type="Box" width="2400">
+   </BOUNDS>
+   <BOUNDS height="5055" left="8490" top="540" type="Window" width="4740">
+   </BOUNDS>
+   <PIN pinname="Windowed Depthbuffer Format" slicecount="1" values="D24X8">
+   </PIN>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="Projection" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="View" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Width" visible="1">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Height" visible="1">
+   </PIN>
+   <PIN pinname="EX9 Out" visible="1">
+   </PIN>
+   <PIN pinname="Fullscreen Depthbuffer Format" slicecount="1" values="NONE">
+   </PIN>
+   <PIN pinname="Fullscreen Dimensions" slicecount="1" values="|1024 x 768|">
+   </PIN>
+   <PIN pinname="Fullscreen Antialiasing Quality Level" slicecount="1" values="NONE">
+   </PIN>
+   <PIN pinname="Windowed Antialiasing Quality Level" slicecount="1" values="NONE">
+   </PIN>
+   <PIN pinname="Auto Aspect Ratio" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="61" nodename="effects\Copy.fx">
+   <BOUNDS height="0" left="4920" top="1875" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="6000" left="4920" top="1875" type="Box" width="6000">
+   </BOUNDS>
+   <BOUNDS height="12000" left="4755" top="5085" type="Window" width="12000">
+   </BOUNDS>
+   <PIN pinname="Texture" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="g offset " visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="40" srcpinname="Mesh" dstnodeid="61" dstpinname="Mesh">
+   </LINK>
+   <LINK srcnodeid="61" srcpinname="Layer" dstnodeid="60" dstpinname="Layers">
+   </LINK>
+   <LINK srcnodeid="59" srcpinname="Texture Out" dstnodeid="61" dstpinname="Texture">
+   </LINK>
+   <LINK srcnodeid="53" srcpinname="XYZW" dstnodeid="61" dstpinname="g offset ">
+   </LINK>
+   <PACK Name="dx11" Version="1.3.1">
+   </PACK>
+   <PACK Name="addonpack" Version="36.0.0">
+   </PACK>
+   </PATCH>

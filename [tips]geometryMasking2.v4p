@@ -1,0 +1,213 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
+   <PATCH nodename="C:\github\vvvvSketches\[tips]geometryMasking2.v4p">
+   <BOUNDS height="8055" left="705" top="1995" type="Window" width="7800">
+   </BOUNDS>
+   <NODE componentmode="InAWindow" id="11" nodename="RENDERER (EX9)">
+   <BOUNDS height="0" left="3030" top="6750" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="1800" left="3030" top="6750" type="Box" width="2400">
+   </BOUNDS>
+   <BOUNDS height="8055" left="8550" top="1995" type="Window" width="7740">
+   </BOUNDS>
+   <PIN pinname="Windowed Depthbuffer Format" slicecount="1" values="D24X8">
+   </PIN>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="View" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Projection" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Fullscreen Depthbuffer Format" slicecount="1" values="NONE">
+   </PIN>
+   <PIN pinname="Fullscreen Dimensions" slicecount="1" values="|1024 x 768|">
+   </PIN>
+   <PIN pinname="Fullscreen Antialiasing Quality Level" slicecount="1" values="NONE">
+   </PIN>
+   <PIN pinname="Windowed Antialiasing Quality Level" slicecount="1" values="NONE">
+   </PIN>
+   <PIN pinname="Auto Aspect Ratio" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="10" nodename="Group (EX9)">
+   <BOUNDS height="0" left="3030" top="5925" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Layer 1" visible="1">
+   </PIN>
+   <PIN pinname="Layer 2" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="11" dstpinname="Layers" srcnodeid="10" srcpinname="Layer">
+   </LINK>
+   <NODE componentmode="Hidden" id="9" nodename="Sphere (DX9)">
+   <BOUNDS height="0" left="1485" top="5430" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Render State" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Resolution X" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Resolution Y" slicecount="1" visible="1" values="34">
+   </PIN>
+   <PIN pinname="Cycles V" slicecount="1" values="0.5">
+   </PIN>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   <PIN pinname="Cycles U" slicecount="1" values="0.5">
+   </PIN>
+   <PIN pinname="Draw Slicewise" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Texture" visible="1">
+   </PIN>
+   <PIN pinname="Texture Coord Mapping" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Texture Transform" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="8" nodename="FileTexture (EX9.Texture)">
+   <BOUNDS height="0" left="1800" top="3900" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Filename" slicecount="1" values="images\earth_512x512.jpg">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="9" dstpinname="Texture" srcnodeid="8" srcpinname="Texture Out">
+   </LINK>
+   <NODE componentmode="Hidden" id="7" nodename="Quad (DX9)">
+   <BOUNDS height="0" left="4530" top="5430" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Texture" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="7" dstpinname="Texture" srcnodeid="8" srcpinname="Texture Out">
+   </LINK>
+   <NODE componentmode="InABox" id="6" nodename="IOBox (Enumerations)">
+   <BOUNDS height="0" left="2280" top="4470" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="240" left="2280" top="4470" type="Box" width="1770">
+   </BOUNDS>
+   <BOUNDS height="160" left="10785" top="4440" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Output Enum" visible="1">
+   </PIN>
+   <PIN pinname="Input Enum" slicecount="1" values="FrontProjected_XY">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="9" dstpinname="Texture Coord Mapping" srcnodeid="6" srcpinname="Output Enum">
+   </LINK>
+   <NODE componentmode="InABox" id="5" nodename="IOBOX (VALUE ADVANCED)">
+   <BOUNDS height="0" left="4665" top="3600" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="1095" left="4665" top="3600" type="Box" width="1065">
+   </BOUNDS>
+   <BOUNDS height="160" left="14040" top="4890" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Show Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Show Slider" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Minimum" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Maximum" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Slider Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Compare">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="7" dstpinname="Enabled" srcnodeid="5" srcpinname="Y Output Value">
+   </LINK>
+   <NODE componentmode="Hidden" id="4" nodename="NOT (Boolean)">
+   <BOUNDS height="0" left="2910" top="4980" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="4" dstpinname="Input" srcnodeid="5" srcpinname="Y Output Value">
+   </LINK>
+   <LINK dstnodeid="9" dstpinname="Enabled" srcnodeid="4" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="10" dstpinname="Layer 1" srcnodeid="9" srcpinname="Layer">
+   </LINK>
+   <LINK dstnodeid="10" dstpinname="Layer 2" srcnodeid="7" srcpinname="Layer">
+   </LINK>
+   <NODE componentmode="InABox" id="3" nodename="IOBox (String)">
+   <BOUNDS height="270" left="240" top="225" type="Node" width="435">
+   </BOUNDS>
+   <BOUNDS height="465" left="240" top="225" type="Box" width="4695">
+   </BOUNDS>
+   <BOUNDS height="160" left="150" top="60" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="0" values="|Tips: geometry masking 2|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="16">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="2" nodename="IOBox (String)">
+   <BOUNDS height="270" left="240" top="660" type="Node" width="1530">
+   </BOUNDS>
+   <BOUNDS height="270" left="240" top="660" type="Box" width="1230">
+   </BOUNDS>
+   <BOUNDS height="160" left="150" top="60" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="0" values="|mask anything|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="1" nodename="IOBox (String)">
+   <BOUNDS height="690" left="240" top="1125" type="Node" width="1065">
+   </BOUNDS>
+   <BOUNDS height="690" left="240" top="1125" type="Box" width="1065">
+   </BOUNDS>
+   <BOUNDS height="160" left="150" top="60" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="0" values="|2010/08/18&cr;&lf;Minoru Ito&cr;&lf;GK TECH Inc.|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="0" nodename="IOBox (String)">
+   <BOUNDS height="1320" left="1410" top="1125" type="Node" width="1335">
+   </BOUNDS>
+   <BOUNDS height="2100" left="1410" top="1125" type="Box" width="5790">
+   </BOUNDS>
+   <BOUNDS height="160" left="2220" top="-720" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="0" values="|&lt;Abstract&gt;&cr;&lf;Mask geometry by  Sphere.&cr;&lf;&cr;&lf;&lt;Key technique&gt;&cr;&lf;Set &quot;FrontProjected_XY&quot; at &quot;Texture Coord Mapping&quot; pin in &quot;Sphere (DX9)&quot; Node.&cr;&lf;&cr;&lf;&lt;Useful for...&gt;&cr;&lf;...|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <PACK Name="dx11" Version="1.3.1">
+   </PACK>
+   <PACK Name="addonpack" Version="36.0.0">
+   </PACK>
+   </PATCH>

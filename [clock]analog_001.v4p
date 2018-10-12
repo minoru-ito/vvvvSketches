@@ -1,0 +1,183 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv40beta16.dtd" >
+   <PATCH nodename="C:\Program Files\vvvv_40beta16\tech member\ito\[clock]analog.v4p">
+   <BOUNDS height="4455" left="7980" top="4260" type="Window" width="6015">
+   </BOUNDS>
+   <NODE id="13" nodename="CurrentTime (Astronomy)">
+   <BOUNDS height="0" left="4410" top="180" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Current Time" visible="1">
+   </PIN>
+   </NODE>
+   <NODE id="12" nodename="TimeToString (String)">
+   <BOUNDS height="0" left="4410" top="525" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Time" visible="1">
+   </PIN>
+   <PIN pinname="String" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="12" dstpinname="Time" srcnodeid="13" srcpinname="Current Time">
+   </LINK>
+   <NODE id="11" nodename="Separate (String)">
+   <BOUNDS height="0" left="4410" top="870" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Intersperse" slicecount="1" values="Dash">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE id="10" nodename="CAR (String)">
+   <BOUNDS height="0" left="4410" top="1215" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Remainder" visible="1">
+   </PIN>
+   <PIN pinname="First Slice" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="10" dstpinname="Input" srcnodeid="11" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="11" dstpinname="Input" srcnodeid="12" srcpinname="String">
+   </LINK>
+   <NODE id="9" nodename="Separate (String)">
+   <BOUNDS height="0" left="4410" top="1560" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Intersperse" slicecount="1" values="Dot">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="9" dstpinname="Input" srcnodeid="10" srcpinname="Remainder">
+   </LINK>
+   <NODE id="8" nodename="AsValue (String)">
+   <BOUNDS height="0" left="4410" top="1905" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="8" dstpinname="Input" srcnodeid="9" srcpinname="Output">
+   </LINK>
+   <NODE id="7" nodename="Quad (DX9)">
+   <BOUNDS height="0" left="2745" top="2595" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InAWindow" id="6" nodename="Renderer (EX9)">
+   <BOUNDS height="0" left="1815" top="3420" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="5220" left="14070" top="4275" type="Window" width="5220">
+   </BOUNDS>
+   <BOUNDS height="1800" left="1815" top="3420" type="Box" width="2400">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="Windowed Depthbuffer Format" slicecount="1" values="NONE">
+   </PIN>
+   <PIN pinname="Windowed Antialiasing Quality Level" slicecount="1" values="2">
+   </PIN>
+   </NODE>
+   <NODE id="5" nodename="Group (EX9)">
+   <BOUNDS height="0" left="1800" top="3075" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Layer 1" visible="1">
+   </PIN>
+   <PIN pinname="Layer 2" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="6" dstpinname="Layers" srcnodeid="5" srcpinname="Layer">
+   </LINK>
+   <NODE id="4" nodename="Transform (Transform 2d)">
+   <BOUNDS height="0" left="2910" top="2235" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="Rotate" visible="1">
+   </PIN>
+   <PIN pinname="ScaleY" slicecount="3" visible="1" values="0.4,0.6,0.8">
+   </PIN>
+   <PIN pinname="ScaleX" slicecount="3" visible="1" values="0.03,0.03,0.01">
+   </PIN>
+   <PIN pinname="CenterY" slicecount="1" values="-0.4">
+   </PIN>
+   <PIN pinname="Transform In" slicecount="1" visible="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="7" dstpinname="Transform" srcnodeid="4" srcpinname="Transform Out">
+   </LINK>
+   <NODE id="3" nodename="Divide (Value)">
+   <BOUNDS height="270" left="4410" top="2250" type="Node" width="300">
+   </BOUNDS>
+   <PIN pinname="Input 2" slicecount="3" visible="1" values="-12,-60,-60">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="3" dstpinname="Input" srcnodeid="8" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="4" dstpinname="Rotate" srcnodeid="3" srcpinname="Output">
+   </LINK>
+   <NODE id="2" nodename="Sphere (DX9)">
+   <BOUNDS height="0" left="240" top="2580" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Cycles V" slicecount="1" values="0.5">
+   </PIN>
+   <PIN pinname="Cycles U" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Color" slicecount="1" values="|0.49625,0.49625,0.49625,1.00000|">
+   </PIN>
+   <PIN pinname="Resolution X" slicecount="1" visible="1" values="24">
+   </PIN>
+   <PIN pinname="Resolution Y" slicecount="1" visible="1" values="24">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   </NODE>
+   <NODE id="1" nodename="Scale (Transform Vector)">
+   <BOUNDS height="0" left="420" top="2040" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="XYZ" slicecount="3" values="1.67,1.67,1.67">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="2" dstpinname="Transform" srcnodeid="1" srcpinname="Transform Out">
+   </LINK>
+   <LINK dstnodeid="5" dstpinname="Layer 2" srcnodeid="7" srcpinname="Layer">
+   </LINK>
+   <LINK dstnodeid="5" dstpinname="Layer 1" srcnodeid="2" srcpinname="Layer">
+   </LINK>
+   <NODE componentmode="InABox" id="0" nodename="IOBox (String)">
+   <BOUNDS height="270" left="1335" top="1035" type="Node" width="1095">
+   </BOUNDS>
+   <BOUNDS height="510" left="1335" top="1035" type="Box" width="2190">
+   </BOUNDS>
+   <BOUNDS height="160" left="0" top="0" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="0" values="|Analog Clock|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="16">
+   </PIN>
+   </NODE>
+   </PATCH>

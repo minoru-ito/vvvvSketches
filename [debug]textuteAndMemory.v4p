@@ -1,0 +1,301 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv40beta21.dtd" >
+   <PATCH nodename="C:\vvvv\tech\ito\[debug]textuteAndMemory.v4p">
+   <BOUNDS height="10320" left="705" top="165" type="Window" width="10245">
+   </BOUNDS>
+   <NODE componentmode="InABox" id="18" nodename="IOBox (String)">
+   <BOUNDS height="270" left="225" top="180" type="Node" width="435">
+   </BOUNDS>
+   <BOUNDS height="540" left="225" top="180" type="Box" width="4770">
+   </BOUNDS>
+   <BOUNDS height="160" left="0" top="0" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="0" values="|texture and memory control|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="16">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="17" nodename="IOBox (String)">
+   <BOUNDS height="270" left="225" top="705" type="Node" width="1530">
+   </BOUNDS>
+   <BOUNDS height="375" left="225" top="705" type="Box" width="4500">
+   </BOUNDS>
+   <BOUNDS height="160" left="0" top="0" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="0" values="メモリにロードしたテクスチャを破棄するにはどうするか。">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="9">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="16" nodename="Renderer (EX9)">
+   <BOUNDS height="0" left="7140" top="3360" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="5055" left="5820" top="1185" type="Window" width="4740">
+   </BOUNDS>
+   <BOUNDS height="1875" left="7140" top="3360" type="Box" width="2115">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="Windowed Depthbuffer Format" slicecount="1" values="D24X8">
+   </PIN>
+   </NODE>
+   <NODE id="15" nodename="Quad (DX9)">
+   <BOUNDS height="0" left="5280" top="4065" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Texture" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Transform" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Render State" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Texture Transform" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Texture Coord Mapping" slicecount="1" values="OnShape_UV">
+   </PIN>
+   <PIN pinname="Space" slicecount="1" values="World">
+   </PIN>
+   <PIN pinname="Color" slicecount="1" values="|1.00000,1.00000,1.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="14" nodename="Renderer (TTY)">
+   <BOUNDS height="0" left="1365" top="7515" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="5055" left="10800" top="1380" type="Window" width="8475">
+   </BOUNDS>
+   <BOUNDS height="2085" left="1365" top="7515" type="Box" width="6135">
+   </BOUNDS>
+   </NODE>
+   <NODE id="13" nodename="FileTexture (EX9.Texture)">
+   <BOUNDS height="0" left="6195" top="2775" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Filename" visible="1">
+   </PIN>
+   <PIN pinname="Repair" pintype="Input" slicecount="1" visible="-1" values="0">
+   </PIN>
+   <PIN pinname="Mip Map Count" slicecount="1" values="All">
+   </PIN>
+   <PIN pinname="Load In Background" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Reload" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="12" nodename="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="5190" top="2370" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="160" left="5520" top="9180" type="Window" width="215">
+   </BOUNDS>
+   <BOUNDS height="465" left="5190" top="2370" type="Box" width="495">
+   </BOUNDS>
+   <PIN pinname="Show Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Show Slider" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Minimum" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Maximum" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Slider Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <NODE id="11" nodename="Memory (Debug)">
+   <BOUNDS height="0" left="1365" top="5730" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Show Data" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="10" nodename="Renderer (GDI)">
+   <BOUNDS height="0" left="1365" top="6105" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="5055" left="5355" top="15090" type="Window" width="6240">
+   </BOUNDS>
+   <BOUNDS height="1350" left="1365" top="6105" type="Box" width="6135">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="10" dstpinname="Layers" srcnodeid="11" srcpinname="Layer">
+   </LINK>
+   <NODE componentmode="InABox" id="9" nodename="IOBox (String)">
+   <BOUNDS height="270" left="225" top="1110" type="Node" width="1530">
+   </BOUNDS>
+   <BOUNDS height="690" left="225" top="1110" type="Box" width="1605">
+   </BOUNDS>
+   <BOUNDS height="160" left="300" top="300" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="0" values="|2009/01/31&cr;&lf;Minoru Ito&cr;&lf;GK TECH Inc.|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="8" nodename="IOBox (String)">
+   <BOUNDS height="0" left="6210" top="2370" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="160" left="5340" top="11190" type="Window" width="215">
+   </BOUNDS>
+   <BOUNDS height="300" left="6210" top="2370" type="Box" width="2640">
+   </BOUNDS>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   <PIN pinname="Input String" slicecount="1" values="images\earth_512x512.jpg">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="16" dstpinname="Layers" srcnodeid="15" srcpinname="Layer">
+   </LINK>
+   <NODE componentmode="InABox" id="7" nodename="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="4710" top="3360" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="160" left="5820" top="9480" type="Window" width="215">
+   </BOUNDS>
+   <BOUNDS height="465" left="4710" top="3360" type="Box" width="495">
+   </BOUNDS>
+   <PIN pinname="Show Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Show Slider" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Minimum" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Maximum" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Slider Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="15" dstpinname="Enabled" srcnodeid="7" srcpinname="Y Output Value">
+   </LINK>
+   <NODE componentmode="InABox" id="6" nodename="IOBox (String)">
+   <BOUNDS height="270" left="225" top="1920" type="Node" width="420">
+   </BOUNDS>
+   <BOUNDS height="3540" left="225" top="1920" type="Box" width="3720">
+   </BOUNDS>
+   <BOUNDS height="160" left="0" top="0" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="0" values="|jpeg画像などをテクスチャとして使うと、一度メモリにロードされたものがそのまま残るため、大量に画像をロードするとフリーズすることがある。&cr;&lf;&cr;&lf;QuadやGroupのEnabledピンを0にしてもメモリ上には画像が残るので、2回目以降の素早い表示はできるが破棄はされない（右側のquad Enabledを0にしたときに下のステータスが何も変化しないのをチェックすること）。&cr;&lf;&cr;&lf;メモリから画像を破棄するには、FileTextureとQuadの接続を切る。方法は、Switch(Node Input)をFileTextureと空のピンにしてON/OFFに割り当てるなどの方法がある（実際に右側のノードを操作してステータスの変化をチェックすること）|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="8">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="5" nodename="IOBox (String)">
+   <BOUNDS height="270" left="4245" top="3090" type="Node" width="1035">
+   </BOUNDS>
+   <BOUNDS height="240" left="4245" top="3090" type="Box" width="1035">
+   </BOUNDS>
+   <BOUNDS height="160" left="0" top="0" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="0" values="|quad Enabled|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="4" nodename="IOBox (String)">
+   <BOUNDS height="270" left="4620" top="2100" type="Node" width="1215">
+   </BOUNDS>
+   <BOUNDS height="270" left="4620" top="2100" type="Box" width="1215">
+   </BOUNDS>
+   <BOUNDS height="160" left="0" top="0" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="0" values="|switch texture|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="3" nodename="IOBox (String)">
+   <BOUNDS height="270" left="6150" top="2100" type="Node" width="990">
+   </BOUNDS>
+   <BOUNDS height="240" left="6150" top="2100" type="Box" width="1965">
+   </BOUNDS>
+   <BOUNDS height="160" left="300" top="300" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="0" values="|sample texture file path|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="2" nodename="IOBox (String)">
+   <BOUNDS height="270" left="7545" top="6105" type="Node" width="1260">
+   </BOUNDS>
+   <BOUNDS height="510" left="7545" top="6105" type="Box" width="1815">
+   </BOUNDS>
+   <BOUNDS height="160" left="0" top="0" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="0" values="|memory Status|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="9">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="1" nodename="IOBox (String)">
+   <BOUNDS height="270" left="7545" top="7515" type="Node" width="1155">
+   </BOUNDS>
+   <BOUNDS height="480" left="7545" top="7515" type="Box" width="1875">
+   </BOUNDS>
+   <BOUNDS height="160" left="0" top="0" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="0" values="|TTY Renderer|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="9">
+   </PIN>
+   </NODE>
+   <NODE id="0" nodename="Switch (Node Input)">
+   <BOUNDS height="0" left="5625" top="3180" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Switch" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="0" dstpinname="Input 2" srcnodeid="13" srcpinname="Texture Out">
+   </LINK>
+   <LINK dstnodeid="0" dstpinname="Switch" srcnodeid="12" srcpinname="Y Output Value">
+   </LINK>
+   <LINK dstnodeid="15" dstpinname="Texture" srcnodeid="0" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="13" dstpinname="Filename" srcnodeid="8" srcpinname="Output String">
+   </LINK>
+   </PATCH>

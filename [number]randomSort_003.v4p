@@ -1,0 +1,173 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv40beta19.1.dtd" >
+   <PATCH nodename="C:\vvvv\tech\ito\[number]randomSort_003.v4p">
+   <BOUNDS height="10350" left="1785" top="3105" type="Window" width="10170">
+   </BOUNDS>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="38">
+   <BOUNDS type="Node" left="330" top="210" width="1410" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="330" top="210" width="2880" height="480">
+   </BOUNDS>
+   <BOUNDS type="Window" left="2085" top="2895" width="215" height="160">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|random sort 003|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="16">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="37">
+   <BOUNDS type="Node" left="330" top="705" width="1065" height="690">
+   </BOUNDS>
+   <BOUNDS type="Box" left="330" top="705" width="1065" height="690">
+   </BOUNDS>
+   <BOUNDS type="Window" left="2085" top="2895" width="215" height="160">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|2009/01/09&cr;&lf;Minoru Ito&cr;&lf;GK TECH Inc.|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="125" nodename="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="495" top="2895" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="160" left="12765" top="7710" type="Window" width="215">
+   </BOUNDS>
+   <BOUNDS height="2205" left="495" top="2895" type="Box" width="1440">
+   </BOUNDS>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="10">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="10" visible="1" values="0,1,2,3,4,5,6,7,8,9">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE id="124" nodename="Count (Value)">
+   <BOUNDS height="0" left="3600" top="5070" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Count" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="124" dstpinname="Input" srcnodeid="125" srcpinname="Y Output Value">
+   </LINK>
+   <NODE id="123" nodename="Sort (Spreads)">
+   <BOUNDS height="0" left="3060" top="6495" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Former Index" visible="1">
+   </PIN>
+   </NODE>
+   <NODE id="122" nodename="GetSlice (Spreads)">
+   <BOUNDS height="270" left="1890" top="6855" type="Node" width="1650">
+   </BOUNDS>
+   <PIN pinname="Index" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="122" dstpinname="Index" srcnodeid="123" srcpinname="Former Index">
+   </LINK>
+   <LINK dstnodeid="122" dstpinname="Input" srcnodeid="125" srcpinname="Y Output Value">
+   </LINK>
+   <NODE componentmode="InABox" id="121" nodename="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="510" top="7410" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="160" left="13065" top="8010" type="Window" width="215">
+   </BOUNDS>
+   <BOUNDS height="2205" left="510" top="7410" type="Box" width="1440">
+   </BOUNDS>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="10">
+   </PIN>
+   <PIN pinname="Y Input Value" visible="1">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="121" dstpinname="Y Input Value" srcnodeid="122" srcpinname="Output">
+   </LINK>
+   <NODE id="120" nodename="Random (Value)">
+   <BOUNDS height="0" left="3060" top="5985" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   <PIN pinname="Is Integer" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Scale" slicecount="1" values="9999999">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="119" nodename="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="2370" top="4095" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="160" left="14400" top="6105" type="Window" width="215">
+   </BOUNDS>
+   <BOUNDS height="690" left="2370" top="4095" type="Box" width="765">
+   </BOUNDS>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Show Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Slider Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="Minimum" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Maximum" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Show Slider" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE id="118" nodename="Select (Value)">
+   <BOUNDS height="0" left="3060" top="5550" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Select" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="118" dstpinname="Input" srcnodeid="119" srcpinname="Y Output Value">
+   </LINK>
+   <LINK dstnodeid="120" dstpinname="Enabled" srcnodeid="118" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="118" dstpinname="Select" srcnodeid="124" srcpinname="Count">
+   </LINK>
+   <LINK dstnodeid="123" dstpinname="Input" srcnodeid="120" srcpinname="Output">
+   </LINK>
+   <NODE componentmode="InABox" id="126" nodename="IOBox (String)">
+   <BOUNDS height="270" left="420" top="1830" type="Node" width="510">
+   </BOUNDS>
+   <BOUNDS height="810" left="420" top="1830" type="Box" width="9315">
+   </BOUNDS>
+   <BOUNDS height="160" left="900" top="900" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="0" values="|Oops... answer is here.&cr;&lf;&cr;&lf;http://vvvv.org/tiki-view_forum_thread.php?comments_parentId=11027&amp;forumId=7&amp;highlight=spread shuffle|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="8">
+   </PIN>
+   </NODE>
+   </PATCH>
