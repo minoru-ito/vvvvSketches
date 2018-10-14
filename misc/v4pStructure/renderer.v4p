@@ -1,0 +1,25 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.1.dtd" >
+   <PATCH nodename="C:\Users\minoruito\Desktop\vvvv\sketch\v4pStructure\renderer.v4p" systemname="callmenames" filename="C:\Users\minoruito\Desktop\vvvv\sketch\v4pStructure\callmenames.v4p">
+   <BOUNDS type="Window" left="11860" top="2820" width="7200" height="5410">
+   </BOUNDS>
+   <PACK Name="addonpack" Version="34.1.0">
+   </PACK>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InAWindow" id="0">
+   <BOUNDS type="Node" left="2680" top="3230" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2680" top="3230" width="2400" height="1800">
+   </BOUNDS>
+   <BOUNDS type="Window" left="12480" top="8650" width="6220" height="5060">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Quad (DX9)" nodename="Quad (DX9)" componentmode="Hidden" id="2">
+   <BOUNDS type="Node" left="2690" top="2290" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="Layer" dstnodeid="0" dstpinname="Layers">
+   </LINK>
+   </PATCH>
